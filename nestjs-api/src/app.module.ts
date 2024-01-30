@@ -5,6 +5,8 @@ import { ProductsModule } from './products/products.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './products/entities/product.entity';
 import { OrdersModule } from './orders/orders.module';
+import { Order } from './orders/entities/order.entity';
+import { OrderItem } from './orders/entities/order-item.entity';
 
 @Module({
   imports: [
@@ -15,7 +17,7 @@ import { OrdersModule } from './orders/orders.module';
       username: 'root',
       password: 'root',
       database: 'nestapi',
-      entities: [Product],
+      entities: [Product, Order, OrderItem],
       synchronize: true,
       logging: true,
     }),
