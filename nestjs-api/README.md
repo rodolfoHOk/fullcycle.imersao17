@@ -20,6 +20,7 @@
 - class-validator
 - class-transformer
 - @nestjs/jwt
+- @golevelup/nestjs-rabbitmq
 
 ## Sobre o microsserviço
 
@@ -39,6 +40,7 @@
 - nest g resource products
 - nest g resource orders
 - nest g resource auth
+- nest g module rabbitmq
 
 ## Links
 
