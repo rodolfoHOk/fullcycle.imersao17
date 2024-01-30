@@ -4,7 +4,10 @@
     "goapi",
     "imersao",
     "mysql",
+    "nestapi",
+    "nestjs",
     "rodolfo",
+    "typeorm",
     "webserver"
   ]
 }
