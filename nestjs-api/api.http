@@ -40,7 +40,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuY
 
 ### Create order
 POST http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiY2hyaXMiLCJpYXQiOjE3MDY2Mzk2NTYsImV4cCI6MTcwNjYzOTcxNn0.msBGKnKJprF3keXlGwEDIiKweC1KgQJU31OBBRyxmeU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiY2hyaXMiLCJpYXQiOjE3MDY2NDI0MjYsImV4cCI6MTcwNjY0MjQ4Nn0.ATPshOiL6zF3QQC6ewAxLaRyTxyx2Fo2nkXCadZtMY8
 Content-Type: application/json
 
 {

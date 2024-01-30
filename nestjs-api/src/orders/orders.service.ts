@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from './entities/order.entity';
 import { In, Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { AmqpConnection } from '@golevelup/nestjs-rabbitmq';
+import { Order } from './entities/order.entity';
 import { Product } from 'src/products/entities/product.entity';
 
 @Injectable()
@@ -10,6 +11,7 @@ export class OrdersService {
   constructor(
     @InjectRepository(Order) private orderRepository: Repository<Order>,
     @InjectRepository(Product) private productRepository: Repository<Product>,
+    private amqpConnection: AmqpConnection,
   ) {}
 
   async create(createOrderDto: CreateOrderDto & { client_id: number }) {
@@ -37,7 +39,15 @@ export class OrdersService {
         };
       }),
     });
-    return await this.orderRepository.save(order);
+    const savedOrder = await this.orderRepository.save(order);
+
+    await this.amqpConnection.publish('amq.direct', 'OrderCreated', {
+      order_id: savedOrder.id,
+      card_hash: createOrderDto.card_hash,
+      total: order.total,
+    });
+
+    return savedOrder;
   }
 
   findAll(client_id: number) {
