@@ -17,6 +17,8 @@
 - typeorm
 - @nestjs/typeorm
 - mysql2
+- class-validator
+- class-transformer
 
 ## Sobre o microsserviço
 

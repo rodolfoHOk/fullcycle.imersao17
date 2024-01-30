@@ -30,10 +30,10 @@ Content-Type: application/json
     },
     {
       "product_id": "2be82129-cf3b-46ab-bd2c-acf7cb13917d",
-      "quantity": 1
+      "quantity": 2
     }
   ],
-  "card_hash": "123"
+  "card_hash": "456"
 }
 
 ### Get order by id
