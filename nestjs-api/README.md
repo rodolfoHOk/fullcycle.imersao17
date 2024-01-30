@@ -37,6 +37,7 @@
 - nest new nestjs-api
 - nest g resource products
 - nest g resource orders
+- nest g resource auth
 
 ## Links
 
