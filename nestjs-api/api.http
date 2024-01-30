@@ -21,15 +21,17 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "username": "john",
-  "password": "john123"
+  "username": "chris",
+  "password": "chris456"
 }
 
 ### List orders
 GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiY2hyaXMiLCJpYXQiOjE3MDY2Mzk2NTYsImV4cCI6MTcwNjYzOTcxNn0.msBGKnKJprF3keXlGwEDIiKweC1KgQJU31OBBRyxmeU
 
 ### Create order
 POST http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiY2hyaXMiLCJpYXQiOjE3MDY2Mzk2NTYsImV4cCI6MTcwNjYzOTcxNn0.msBGKnKJprF3keXlGwEDIiKweC1KgQJU31OBBRyxmeU
 Content-Type: application/json
 
 {
@@ -48,3 +50,4 @@ Content-Type: application/json
 
 ### Get order by id
 GET http://localhost:3000/orders/7f35a7e1-a15c-4036-90d9-b150e672b6c1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwNjYzODY3MSwiZXhwIjoxNzA2NjM4NzMxfQ.uCeg4zwE8w5pqMwXLz4i6wd1u8-xP65SHYgj4LsoY5c
