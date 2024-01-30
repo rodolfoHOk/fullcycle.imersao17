@@ -1,8 +1,8 @@
 ### List products
-GET http://localhost:3000/products HTTP/1.1
+GET http://localhost:3000/products
 
 ### Create product
-POST http://localhost:3000/products HTTP/1.1
+POST http://localhost:3000/products
 Content-Type: application/json
 
 {
@@ -13,4 +13,28 @@ Content-Type: application/json
 }
 
 ### Get product by id
-GET http://localhost:3000/products/831c7ab7-fa49-49a0-a9b3-35d6a0441071 HTTP/1.1
+GET http://localhost:3000/products/831c7ab7-fa49-49a0-a9b3-35d6a0441071
+
+### List orders
+GET http://localhost:3000/orders
+
+### Create order
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "product_id": "10c83bae-cf4b-4564-b38a-5c15a4d6f0da",
+      "quantity": 1
+    },
+    {
+      "product_id": "2be82129-cf3b-46ab-bd2c-acf7cb13917d",
+      "quantity": 1
+    }
+  ],
+  "card_hash": "123"
+}
+
+### Get order by id
+GET http://localhost:3000/orders/7f35a7e1-a15c-4036-90d9-b150e672b6c1
