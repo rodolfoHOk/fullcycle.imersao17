@@ -15,6 +15,16 @@ Content-Type: application/json
 ### Get product by id
 GET http://localhost:3000/products/831c7ab7-fa49-49a0-a9b3-35d6a0441071
 
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "john123"
+}
+
 ### List orders
 GET http://localhost:3000/orders
 

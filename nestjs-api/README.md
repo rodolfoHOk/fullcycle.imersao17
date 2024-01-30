@@ -19,6 +19,7 @@
 - mysql2
 - class-validator
 - class-transformer
+- @nestjs/jwt
 
 ## Sobre o microsserviço
 
