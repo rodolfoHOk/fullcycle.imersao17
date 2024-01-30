@@ -27,7 +27,7 @@ Content-Type: application/json
   "description": "This is product 3",
   "price": 500,
   "category_id": "0fe69a7a-b52f-41a8-8c28-c3b8c8825e9f",
-  "image_url": "http://localhost:8080/product-1.png"
+  "image_url": "http://localhost:8080/product-3.png"
 }
 
 ### List products
