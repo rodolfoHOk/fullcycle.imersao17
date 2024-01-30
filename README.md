@@ -1,8 +1,8 @@
-# Imersão FullStack & FullCycle 17 - Code-commerce
+# Imersão FullStack & FullCycle 17 - Code Commerce
 
-> Imersão FullStack & FullCycle 17 da CodeEdu / FullCycle
+> Imersão FullStack & FullCycle 17 - Code Commerce da CodeEdu / FullCycle
 
-## Tecnologias
+## Principais tecnologias
 
 - Go lang
 - Nest.js
@@ -27,3 +27,7 @@
 <img src="./files/fsfc17-06.png" alt="Sobre o projeto 2" width="450" />
 
 <img src="./files/fsfc17-07.png" alt="Sobre o projeto 3" width="450" />
+
+## Código fonte
+
+- [Go API](/goapi/README.md)
