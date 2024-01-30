@@ -26,12 +26,12 @@ export class OrdersController {
   }
 
   @Get()
-  findAll() {
-    return this.ordersService.findAll();
+  findAll(@Req() request: Request) {
+    return this.ordersService.findAll(request['user'].sub);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.ordersService.findOne(id);
+  findOne(@Param('id') id: string, @Req() request: Request) {
+    return this.ordersService.findOne(id, request['user'].sub);
   }
 }

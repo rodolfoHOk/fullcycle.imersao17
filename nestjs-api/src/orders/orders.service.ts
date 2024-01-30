@@ -40,13 +40,16 @@ export class OrdersService {
     return await this.orderRepository.save(order);
   }
 
-  findAll() {
-    return this.orderRepository.find();
+  findAll(client_id: number) {
+    return this.orderRepository.find({
+      where: { client_id },
+      order: { created_at: 'DESC' },
+    });
   }
 
-  findOne(id: string) {
-    return this.orderRepository.findOne({
-      where: { id },
+  findOne(id: string, client_id: number) {
+    return this.orderRepository.findOneOrFail({
+      where: { id, client_id },
       relations: { items: true },
     });
   }
