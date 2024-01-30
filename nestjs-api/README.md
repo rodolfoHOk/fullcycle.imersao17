@@ -12,6 +12,12 @@
 - RabbitMQ
 - Autenticação JWT
 
+### Bibliotecas adicionais
+
+- typeorm
+- @nestjs/typeorm
+- mysql2
+
 ## Sobre o microsserviço
 
 <img src="./files/fsfc17-09.png" alt="Sobre o microsserviço 1" width="450" />
@@ -23,6 +29,11 @@
 <img src="./files/fsfc17-12.png" alt="Sobre o microsserviço 4" width="450" />
 
 <img src="./files/fsfc17-13.png" alt="Sobre o microsserviço 5" width="450" />
+
+## Nest.js
+
+- nest new nestjs-api
+- nest g resource products
 
 ## Links
 
