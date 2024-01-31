@@ -9,6 +9,14 @@
 - React Server Components
 - Material UI
 
+## Bibliotecas adicionais
+
+- @mui/material
+- @emotion/react
+- @emotion/styled
+- @mui/material-nextjs
+- @emotion/cache
+
 ## Links
 
 - [Documentação Next.js com App Router](https://nextjs.org/docs)
