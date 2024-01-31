@@ -41,7 +41,7 @@ const products: Product[] = [
 
 function ProductsPage() {
   return (
-    <Grid2 container spacing={2} sx={{ mt: 2 }}>
+    <Grid2 container spacing={2}>
       {products.length === 0 && (
         <Grid2 xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
           <Typography variant="h5">Nenhum produto encontrado</Typography>
