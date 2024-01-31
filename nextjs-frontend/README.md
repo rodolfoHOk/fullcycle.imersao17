@@ -17,6 +17,9 @@
 - @mui/material-nextjs
 - @emotion/cache
 - @mui/icons-material
+- react-hook-form
+- @hookform/resolvers
+- yup
 
 ## Links
 
