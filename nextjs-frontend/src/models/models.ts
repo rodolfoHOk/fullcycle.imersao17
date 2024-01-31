@@ -32,3 +32,14 @@ export type OrderItem = {
   price: number;
   product: Product;
 };
+
+export type Cart = {
+  items: CartItem[];
+  total: number;
+};
+
+export type CartItem = {
+  product_id: string;
+  quantity: number;
+  total: number;
+};
