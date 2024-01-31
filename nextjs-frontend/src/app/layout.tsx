@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Box, ThemeProvider } from '@mui/material';
+import { roboto } from '@/roboto';
+import { theme } from '@/theme';
 
 export const metadata: Metadata = {
   title: 'Code Commerce',
@@ -16,9 +16,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          {children}
+          <ThemeProvider theme={theme}>
+            <Box
+              component="main"
+              sx={{
+                flexGrow: 1,
+                bgcolor: 'background.default',
+                mt: ['122px', '135px', '146px'],
+                p: 3,
+              }}
+            >
+              {children}
+            </Box>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
