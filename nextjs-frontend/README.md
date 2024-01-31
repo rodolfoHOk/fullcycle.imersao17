@@ -16,6 +16,7 @@
 - @emotion/styled
 - @mui/material-nextjs
 - @emotion/cache
+- @mui/icons-material
 
 ## Links
 
