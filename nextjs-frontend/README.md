@@ -2,6 +2,8 @@
 
 > Imersão FullStack & FullCycle 17 - Code Commerce da CodeEdu / FullCycle
 
+2:06:11
+
 ## Tecnologias
 
 - Typescript / Javascript
