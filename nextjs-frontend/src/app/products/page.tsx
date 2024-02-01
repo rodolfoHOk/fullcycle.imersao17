@@ -12,34 +12,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/models/models';
 
-const products: Product[] = [
-  {
-    id: '1',
-    name: 'Produto 1',
-    description: 'Descrição do produto 1',
-    price: 100,
-    image_url: 'https://source.unsplash.com/random?product',
-    category_id: '1',
-  },
-  {
-    id: '2',
-    name: 'Produto 2',
-    description: 'Descrição do produto 2',
-    price: 100,
-    image_url: 'https://source.unsplash.com/random?product',
-    category_id: '2',
-  },
-  {
-    id: '3',
-    name: 'Produto 3',
-    description: 'Descrição do produto 3',
-    price: 100,
-    image_url: 'https://source.unsplash.com/random?product',
-    category_id: '1',
-  },
-];
+async function getProducts(): Promise<Product[]> {
+  const response = await fetch(`http://localhost:8080/products`, {
+    next: {
+      revalidate: 10,
+    },
+  });
+  return response.json();
+}
 
-function ProductsPage() {
+async function ProductsPage() {
+  const products = await getProducts();
+
   return (
     <Grid2 container spacing={2}>
       {products.length === 0 && (
