@@ -9,11 +9,9 @@ export class ProductService {
     category_id: string | undefined;
   }): Promise<Product[]> {
     let url = `${process.env.CATALOG_API_URL}/products`;
-
     if (category_id) {
       url = url + `/category/${category_id}`;
     }
-
     const response = await fetch(url, {
       next: {
         revalidate: 10,
@@ -27,6 +25,19 @@ export class ProductService {
       );
     }
     return data;
+  }
+
+  async getProductsByIds(productIds: string[]): Promise<Product[]> {
+    const responses = await Promise.all(
+      productIds.map((productId) =>
+        fetch(`${process.env.CATALOG_API_URL}/products/${productId}`, {
+          next: {
+            revalidate: 10,
+          },
+        })
+      )
+    );
+    return Promise.all(responses.map((response) => response.json()));
   }
 
   async getProduct(id: string): Promise<Product> {
