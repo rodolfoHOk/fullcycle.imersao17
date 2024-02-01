@@ -12,8 +12,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ProductService } from '@/services/product.service';
 
-async function ProductsPage() {
-  const products = await new ProductService().getProducts();
+async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: { search?: string };
+}) {
+  const search = searchParams.search;
+  const products = await new ProductService().getProducts({ search });
 
   return (
     <Grid2 container spacing={2}>

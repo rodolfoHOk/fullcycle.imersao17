@@ -3,6 +3,7 @@
 import { InputBase, styled } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import SearchIcon from '@mui/icons-material/Search';
+import { useSearchParams } from 'next/navigation';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -42,6 +43,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export function SearchBar() {
+  const searchParams = useSearchParams();
+
   return (
     <Search>
       <SearchIconWrapper>
@@ -49,7 +52,12 @@ export function SearchBar() {
       </SearchIconWrapper>
 
       <form>
-        <StyledInputBase name="search" type="search" placeholder="Pesquisar" />
+        <StyledInputBase
+          name="search"
+          type="search"
+          placeholder="Pesquisar"
+          defaultValue={searchParams.get('search')}
+        />
       </form>
     </Search>
   );
