@@ -8,6 +8,7 @@
 - Next.js / React.js
 - React Server Components
 - Material UI
+- Autenticação JWT
 
 ### Next.js
 
