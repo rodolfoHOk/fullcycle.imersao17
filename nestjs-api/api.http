@@ -36,7 +36,7 @@ Content-Type: application/json
 
 ### List orders
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoiY2hyaXMiLCJpYXQiOjE3MDY2NDAxNjQsImV4cCI6MTcwNjY0MDIyNH0.KjILge9X9Xnyto_vxz2FHT998b-Qefm7GtpqdbuMOqw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwNjc5NjA4OCwiZXhwIjoxNzA2Nzk2MTQ4fQ.MIV3f8HMGgwjjDhh6COWt929ZISmn0Cog7z4KpNhPP8
 
 ### Create order
 POST http://localhost:3000/orders

@@ -27,6 +27,10 @@
 
 - [Documentação Material UI](https://mui.com/material-ui/getting-started/)
 
+## Servir imagens
+
+- npx serve -l 9000 images
+
 ## Next default doc
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

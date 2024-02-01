@@ -3,20 +3,18 @@ version: '3'
 services:
   db:
     image: mysql:latest
-    container_name: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: nestapi
       MYSQL_PASSWORD: root
     ports:
-      - 3306:3306
+      - 3307:3306
     volumes:
       - .docker/mysql:/var/lib/mysql
 
   broker:
     image: rabbitmq:3.12-management
-    container_name: rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
