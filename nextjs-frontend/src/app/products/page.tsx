@@ -10,7 +10,33 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ProductService } from '@/services/product.service';
+import { Product } from '@/models/models';
+
+async function getProducts({
+  search,
+  category_id,
+}: {
+  search?: string;
+  category_id?: string;
+}): Promise<Product[]> {
+  const urlSearchParams = new URLSearchParams();
+  if (search) {
+    urlSearchParams.append('search', search);
+  }
+  if (category_id) {
+    urlSearchParams.append('category_id', category_id);
+  }
+  let url = `${process.env.NEXT_API_URL}/products`;
+  if (urlSearchParams.toString()) {
+    url += `?${urlSearchParams.toString()}`;
+  }
+  const response = await fetch(url, {
+    next: {
+      revalidate: 10,
+    },
+  });
+  return response.json();
+}
 
 async function ProductsPage({
   searchParams,
@@ -19,7 +45,7 @@ async function ProductsPage({
 }) {
   const { search, category_id } = searchParams;
 
-  const products = await new ProductService().getProducts({
+  const products = await getProducts({
     search,
     category_id,
   });
