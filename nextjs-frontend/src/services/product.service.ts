@@ -3,10 +3,18 @@ import { Product } from '@/models/models';
 export class ProductService {
   async getProducts({
     search,
+    category_id,
   }: {
     search: string | undefined;
+    category_id: string | undefined;
   }): Promise<Product[]> {
-    const response = await fetch(`${process.env.CATALOG_API_URL}/products`, {
+    let url = `${process.env.CATALOG_API_URL}/products`;
+
+    if (category_id) {
+      url = url + `/category/${category_id}`;
+    }
+
+    const response = await fetch(url, {
       next: {
         revalidate: 10,
       },
