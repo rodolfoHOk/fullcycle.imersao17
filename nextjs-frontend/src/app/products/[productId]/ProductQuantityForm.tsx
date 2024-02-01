@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Product } from '@/models/models';
+import { addToCartAction } from '@/server-actions/cart.action';
 
 const schema = yup
   .object({
@@ -42,7 +43,7 @@ export function ProductQuantityForm({ product }: ProductQuantityFormProps) {
   }, [watch, product, getValues]);
 
   return (
-    <Box component="form" sx={{ p: 1 }}>
+    <Box component="form" sx={{ p: 1 }} action={addToCartAction}>
       <Box
         sx={{
           display: 'flex',

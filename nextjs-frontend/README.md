@@ -9,7 +9,15 @@
 - React Server Components
 - Material UI
 
-## Bibliotecas adicionais
+### Next.js
+
+- server components
+- client components
+- next api
+- server action
+- cookies
+
+### Bibliotecas adicionais
 
 - @mui/material
 - @emotion/react
