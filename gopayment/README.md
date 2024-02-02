@@ -22,4 +22,4 @@
 
 - entrar nesta pasta
 - go mod tidy
-<!-- - go run cmd/payment/main.go -->
+- go run cmd/payment/main.go
