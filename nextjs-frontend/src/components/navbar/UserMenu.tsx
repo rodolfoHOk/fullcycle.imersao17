@@ -8,6 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { logoutAction } from '@/server-actions/auth.action';
 
 export type UserMenuProps = {
   user: any | null;
@@ -35,9 +36,9 @@ export function UserMenu({ user }: UserMenuProps) {
     router.push('/my-orders');
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await logoutAction();
     handleClose();
-    // to do
   };
 
   return user ? (

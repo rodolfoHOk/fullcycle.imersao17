@@ -7,9 +7,11 @@ import { SearchBar } from './SearchBar';
 import { UserMenu } from './UserMenu';
 import { SelectCategory } from './SelectCategory';
 import { CategoryService } from '@/services/category.service';
+import { AuthService } from '@/services/auth.service';
 
 export async function NavBar() {
   const categories = await new CategoryService().getCategories();
+  const user = new AuthService().getUser();
 
   return (
     <AppBar position="fixed">
@@ -39,7 +41,7 @@ export async function NavBar() {
           <ShoppingCartIcon />
         </IconButton>
 
-        <UserMenu user={{ id: 1 }} />
+        <UserMenu user={user} />
       </Toolbar>
 
       <Toolbar
