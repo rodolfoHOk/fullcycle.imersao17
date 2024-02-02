@@ -43,7 +43,8 @@ export class CartService {
   removeItemFromCart(index: number) {
     const cartRaw = this.cookieStore.get('cart')?.value;
     const cart: Cart = cartRaw ? JSON.parse(cartRaw) : { items: [] };
-    cart.items.splice(index, 1);
+    const removedItem = cart.items.splice(index, 1);
+    cart.total -= removedItem[0].total;
     this.cookieStore.set('cart', JSON.stringify(cart));
   }
 

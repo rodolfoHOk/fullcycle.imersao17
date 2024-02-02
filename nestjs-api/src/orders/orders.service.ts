@@ -22,15 +22,14 @@ export class OrdersService {
     });
     if (products.length !== uniqueProductIds.length) {
       throw new Error(
-        `Algum produto não existe. Produtos passados: ${productIds}, produtos encontrados: ${products.map((product) => product.id)}`,
+        `Algum produto não existe. Produtos passados ${productIds}, produtos encontrados ${products.map((product) => product.id)}`,
       );
     }
-
     const order = Order.create({
       client_id: createOrderDto.client_id,
       items: createOrderDto.items.map((item) => {
         const product = products.find(
-          (product) => (product.id = item.product_id),
+          (product) => product.id === item.product_id,
         );
         return {
           price: product.price,
@@ -39,15 +38,13 @@ export class OrdersService {
         };
       }),
     });
-    const savedOrder = await this.orderRepository.save(order);
-
+    const orderSaved = await this.orderRepository.save(order);
     await this.amqpConnection.publish('amq.direct', 'OrderCreated', {
-      order_id: savedOrder.id,
+      order_id: order.id,
       card_hash: createOrderDto.card_hash,
       total: order.total,
     });
-
-    return savedOrder;
+    return orderSaved;
   }
 
   findAll(client_id: number) {
