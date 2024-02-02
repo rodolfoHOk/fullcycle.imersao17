@@ -9,44 +9,12 @@ import {
 } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { Total } from '@/components/Total';
-import { Order, OrderStatus } from '@/models/models';
+import { OrderStatus } from '@/models/models';
+import { OrderServiceFactory } from '@/services/order.service';
 
-const order: Order = {
-  id: '1',
-  status: OrderStatus.PENDING,
-  created_at: '2021-10-10T00:00:00.000Z',
-  items: [
-    {
-      id: 1,
-      product: {
-        id: '1',
-        name: 'Camisa',
-        description: 'Camisa branca',
-        price: 100,
-        image_url: 'https://source.unsplash.com/random?product',
-        category_id: '1',
-      },
-      quantity: 2,
-      price: 100,
-    },
-    {
-      id: 2,
-      product: {
-        id: '2',
-        name: 'Calça',
-        description: 'Calça jeans',
-        price: 100,
-        image_url: 'https://source.unsplash.com/random?product',
-        category_id: '1',
-      },
-      quantity: 1,
-      price: 100,
-    },
-  ],
-  total: 1000,
-};
+async function MyOrderDetailPage({ params }: { params: { orderId: string } }) {
+  const order = await OrderServiceFactory.create().getOrder(params.orderId);
 
-function MyOrderDetailPage({ params }: { params: { orderId: string } }) {
   return (
     <Box>
       <Grid2 container spacing={2}>
