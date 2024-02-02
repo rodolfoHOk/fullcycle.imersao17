@@ -9,7 +9,7 @@
 
 ### Bibliotecas adicionais
 
--
+- github.com/rabbitmq/amqp091-go
 
 ## Rodar
 

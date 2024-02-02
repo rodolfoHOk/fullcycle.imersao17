@@ -37,11 +37,11 @@ func Consume(ch *amqp.Channel, out chan amqp.Delivery, queue string) error {
 	return nil
 }
 
-func Publish(ctx context.Context, ch *amqp.Channel, body, exchangeName string) error {
+func Publish(ctx context.Context, ch *amqp.Channel, body, exchangeName, routingKey string) error {
 	err := ch.PublishWithContext(
 		ctx,
 		exchangeName,
-		"",
+		routingKey,
 		false,
 		false,
 		amqp.Publishing{

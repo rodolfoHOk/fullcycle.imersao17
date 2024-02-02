@@ -10,6 +10,8 @@ import (
 	"github.com/rodolfoHOk/fullcycle.imersao17/gopayment/pkg/rabbitmq"
 )
 
+// exemplo para test {"order_id": "123", "card_hash": "123", "total": 100.00}
+
 func main() {
 	ctx := context.Background()
 	ch, err := rabbitmq.OpenChannel()
@@ -40,7 +42,7 @@ func main() {
 			break
 		}
 
-		err = rabbitmq.Publish(ctx, ch, string(responseJSON), "amq.direct")
+		err = rabbitmq.Publish(ctx, ch, string(responseJSON), "amq.direct", "PaymentDone")
 		if err != nil {
 			slog.Error(err.Error())
 			break
